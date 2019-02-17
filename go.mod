@@ -3,10 +3,12 @@ module github.com/halium-project/go-server-utils
 require (
 	github.com/asaskevich/govalidator v0.0.0-20180720115003-f9ffefc3facf
 	github.com/kr/pretty v0.1.0 // indirect
+	github.com/meatballhat/negroni-logrus v0.0.0-20170801195057-31067281800f
 	github.com/phyber/negroni-gzip v0.0.0-20180113114010-ef6356a5d029
 	github.com/pkg/errors v0.8.1
 	github.com/rs/cors v1.6.0
 	github.com/satori/go.uuid v1.2.0
+	github.com/sirupsen/logrus v1.3.0 // indirect
 	github.com/stretchr/testify v1.3.0
 	github.com/urfave/negroni v1.0.0
 	golang.org/x/crypto v0.0.0-20190211182817-74369b46fc67

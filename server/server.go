@@ -5,6 +5,7 @@ import (
 	"net/http"
 	"time"
 
+	negronilogrus "github.com/meatballhat/negroni-logrus"
 	"github.com/phyber/negroni-gzip/gzip"
 	"github.com/rs/cors"
 	"github.com/urfave/negroni"
@@ -14,7 +15,7 @@ import (
 func ServeHandler(addr string, handler http.Handler) {
 	server := negroni.New().
 		With(negroni.NewRecovery()).
-		With(negroni.NewLogger()).
+		With(negronilogrus.NewMiddleware()).
 		With(gzip.Gzip(gzip.DefaultCompression)).
 		With(cors.Default())
 
