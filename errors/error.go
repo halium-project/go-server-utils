@@ -16,6 +16,7 @@ const (
 	NotAuthorized      ErrorKind = "notAuthorized"
 	NotFound           ErrorKind = "notFound"
 	Validation         ErrorKind = "validationError"
+	InvalidJSON        ErrorKind = "invalidJSON"
 )
 
 type Error struct {

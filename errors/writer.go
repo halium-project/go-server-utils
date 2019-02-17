@@ -45,6 +45,9 @@ func WriteError(w http.ResponseWriter, err *Error) {
 	case Validation:
 		w.WriteHeader(http.StatusUnprocessableEntity)
 
+	case InvalidJSON:
+		w.WriteHeader(http.StatusBadRequest)
+
 	case BadRequest:
 		w.WriteHeader(http.StatusBadRequest)
 
