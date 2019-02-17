@@ -25,6 +25,8 @@ func IntoResponse(w http.ResponseWriter, err error) {
 }
 
 func WriteError(w http.ResponseWriter, err *Error) {
+	w.Header().Set("Content-Type", "application/json")
+
 	switch err.Kind {
 	case Internal:
 		w.WriteHeader(http.StatusInternalServerError)
