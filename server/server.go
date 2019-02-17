@@ -17,7 +17,7 @@ func ServeHandler(addr string, handler http.Handler) {
 		With(negroni.NewRecovery()).
 		With(negronilogrus.NewMiddleware()).
 		With(gzip.Gzip(gzip.DefaultCompression)).
-		With(cors.Default())
+		With(cors.AllowAll())
 
 	server.UseHandler(handler)
 
