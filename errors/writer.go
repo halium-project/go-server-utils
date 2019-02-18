@@ -3,8 +3,6 @@ package errors
 import (
 	"log"
 	"net/http"
-
-	"github.com/halium-project/go-server-utils/env"
 )
 
 func IntoResponse(w http.ResponseWriter, err error) {
@@ -30,11 +28,6 @@ func WriteError(w http.ResponseWriter, err *Error) {
 	switch err.Kind {
 	case Internal:
 		w.WriteHeader(http.StatusInternalServerError)
-
-		if env.MustGetEnv("ENV") == "production" {
-			// Don't write the body of internal errors in production
-			return
-		}
 
 	case NotAuthorized:
 		w.WriteHeader(http.StatusUnauthorized)
