@@ -17,6 +17,7 @@ const (
 	NotFound           ErrorKind = "notFound"
 	Validation         ErrorKind = "validationError"
 	InvalidJSON        ErrorKind = "invalidJSON"
+	InvalidMethod      ErrorKind = "invalidMethod"
 )
 
 type Error struct {

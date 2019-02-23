@@ -44,6 +44,9 @@ func WriteError(w http.ResponseWriter, err *Error) {
 	case BadRequest:
 		w.WriteHeader(http.StatusBadRequest)
 
+	case InvalidMethod:
+		w.WriteHeader(http.StatusMethodNotAllowed)
+
 	case Forbidden:
 		w.WriteHeader(http.StatusForbidden)
 
